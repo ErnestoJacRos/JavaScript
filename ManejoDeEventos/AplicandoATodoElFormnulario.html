@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener  formulario </title>
+</head>
+<body>
+    <h1 id="titulo">addEventListener a formualrio</h1>
+    <br>
+    <p>Debemos poner true como paramtroa del addEventListener para que se herede  alaso hijos del fomrulario en este caso esta después de la función fecha</p>
+        <br>
+        <form action="" method="get" id="formulario">
+    <label for="name" >Nombre: </label>
+    <input type="text" id="name"  autocomplete="off">
+    <br><br>
+    <label for="lastname ">Apellido: <input type="text" id="lastname" autocomplete="off"></label>
+</form>
+</body>
+<script>
+    const formulario = document.getElementById('formulario')
+    formulario.addEventListener('focus',(evento)=>{
+        evento.target.style.background = 'yellow'
+    },true);
+    
+    formulario.addEventListener('blur',(evento) =>{
+        evento.target.style.background = ''
+    },true);
+
+    
+</script>
+</html>

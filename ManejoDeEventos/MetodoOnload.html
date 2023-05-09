@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo Onload</title>
+</head>
+<body onload="entrar()">
+    <h1 id="titulo"> Método Onload</h1>
+    <br>
+    <div id="mostrar"></div>
+    
+</body>
+<script>
+    function entrar(){
+        alert('Entrando con la pag web')
+        let texto = '';
+        if(navigator.cookieEnabled){
+            texto = 'Los Cookies están habilitados';
+        }else{
+            texto = 'Los Cookies están Deshabilitados'
+        }
+        document.getElementById('mostrar').innerHTML = texto;
+    }
+</script>
+</html>

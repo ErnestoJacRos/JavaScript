@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+</head>
+<body>
+    <h1 id="titulo">addEventListener</h1>
+        <br>
+    <label for="name" >Nombre: </label>
+    <input type="text" id="name"  autocomplete="off">
+    <br><br>
+    <label for="lastname ">Apellido: <input type="text" id="lastname" autocomplete="off"></label>
+</body>
+<script>
+    document.getElementById('name').addEventListener('focus',cambiar);
+    document.getElementById('name').addEventListener('blur',regresar);
+
+    document.getElementById('lastname').addEventListener('focus',cambiar);
+    document.getElementById('lastname').addEventListener('blur',regresar);
+
+    
+    function cambiar(evento){
+        //usamos el parametro de la función más 'target' com si fuera el this
+        let componente = evento.target;
+        componente.style.background = 'yellow'
+    }
+
+    function regresar(evento){
+        let componente = evento.target;
+        componente.style.background = 'white'
+    }
+
+    
+</script>
+</html>

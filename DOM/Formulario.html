@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Js</title>
+</head>
+<body>
+   
+    <form   id="formulario" method="get" action="mi_servidor">
+        <fieldset>
+            <legend>Datos Persona</legend>
+      
+            <label for="name">Nombre:</label><br>
+            <input type="text" name="name" id="name" placeholder="Escriba su nombre" value="name"><br>
+
+            <label for="lastname">Apellido:</label><br>
+            <input type="text" name="lastname" id="lastname" placeholder="Escriba su apellido" value="lastname">
+   
+       </fieldset>
+    </form>
+    <button onclick="mostrarValores()">Mostrar</button>
+    <div id="valores">
+
+    </div>
+    <script>
+        function mostrarValores(){
+            let formulario = document.forms['formulario']
+            let texto = '';
+            for (const iterator of formulario) {
+                texto += iterator.value + '<br>'
+            }
+           document.getElementById('valores').innerHTML = texto;
+        }
+      
+    </script>    
+</body>
+
+</html>

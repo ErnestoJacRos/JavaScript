@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Eventos </title>
+</head>
+<body>
+    <h1 onclick="cambiarTexto(this)">Manejo de Eventos </h1>
+    <p id="parrafo">Ernesto</p>
+    <button id="btn" onclick="mostrar()">Cambiar</button>
+</body>
+<script>
+    function mostrar(){
+        document.getElementById('parrafo').innerHTML = 'Jacros';
+    }
+    function cambiarTexto(titulo){
+        console.log(titulo);
+        titulo.innerHTML = 'Cambio de titulo con ayuda de JS'
+    }
+</script>
+</html>

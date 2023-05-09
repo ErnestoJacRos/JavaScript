@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efecto Matrix</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canv" width="500" height="500"></canvas>
+    <h1 style="color: white ;">Ernesto Jacros</h1>
+    
+</body>
+<script>
+    /*Buscamos el canvas por Id*/
+    const canvas = document.getElementById('canv');
+    /*Selecionamos el contexto y gurdamos su ancho y alto*/
+    const contexto = canvas.getContext('2d');
+    const ancho = canvas.width = document.body.offsetWidth;
+    const alto  = canvas.height = document.body.offsetHeight;
+    /*Dividimos el lienzo en columnas */
+    const cols = Math.floor(ancho/20)+1;
+    const ypos = Array(cols).fill(0);
+    /*Selecionamos un color para pintar */
+    contexto.fillStyle = '#000'
+    contexto.fillRect(0,0,ancho,alto);
+
+    /*Creamos la funcion matrix*/
+    function matrix(){
+        /*Seleccionamos el color negro para pintar transparente, ponemos las capa cada vbez que pinta*/
+        contexto.fillStyle = '#0001'
+    contexto.fillRect(0,0,ancho,alto);
+    /*Seleccionamos  color verde y la fuente*/
+    contexto.fillStyle = '#0f0'
+    contexto.font = '15pt monospace';
+    /*comenzamos a pintar desde la posición y de cada columna que da la posición y y un indice*/
+    ypos.forEach((y,ind)=>{
+        const text = String.fromCharCode(Math.random()*128)
+        const x = ind *20;
+        contexto.fillText(text, x , y)
+        /*Si la posición y supera 100 haz esto y decirle que vuelva arriba*/
+        if(y > 100 + Math.random()*10000) ypos [ind] = 0;
+        /*en caso contario posicion vertical de esa columna la incrementamos en 20 unidades*/
+        else ypos[ind] = y + 20;
+        })
+
+    }
+    /**Ejecutamos la funcioon cada 50 milisegundos*/
+    setInterval(matrix,50);
+
+
+</script>
+</html>

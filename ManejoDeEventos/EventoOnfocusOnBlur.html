@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento OnFocus OnBlur</title>
+</head>
+<body>
+    <h1 id="titulo">Evento OnFocus OnBlur</h1>
+        <br>
+    <label for="name" id="name">Nombre: </label>
+    <input type="text" id="name" onfocus="cambiar(this)" onblur="regresar(this)" autocomplete="off">
+    <br><br>
+    <label for="lastname " id="lastname">Apellido: <input type="text" id="lastname" onfocus="cambiar(this)" onblur="regresar(this)" autocomplete="off"></label>
+</body>
+<script>
+    function cambiar(elementoInput){
+        elementoInput.style.background = 'yellow'
+        //alert('introduzca solo su nombre ')
+    }
+    function regresar(elementoInput){
+        elementoInput.style.background = 'white'
+    }
+    
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo DOM con JavaScript</title>
+    <style>
+        .azul{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    
+            <h1 id="cabecero" class="azul">ejemplo DOM con JavaScript</h1>
+            <p class="azul"> Saludos! </p>
+            <p class="azul">usamos document para acceder despues usamos <br>
+                 .getElementById()
+                 para acceder al elemento html <br>
+                 y para unsar el valor del elemneto usamos innerHTML
+            </p>
+            <br>
+            <p class="azul">
+                podemos cambiar el contenido de una tag de html desde Js con innerHTML y la variable que hemos definido para dicha etiqueta 
+            </p>
+        
+    
+
+    <script>
+      /*console.log('Saludos desde JavaScript');
+        let cabecero = document.getElementById('cabecero');
+        console.log(`Valor Cabecero: ${cabecero.innerHTML} `)
+        let parrafo = document.getElementById('parrafo').innerHTML;
+        console.log(`Valor del párrafo:  ${parrafo}`)
+        
+        cabecero.innerHTML = 'Nuevo Cabecero desde Js';
+        parrafo.innerHTML = 'Nuevo contenido de párrafo desde Js'
+        console.log('revison')*/
+
+        //si queremos acceder a los elemantos de html por le nombre de la tag usamos getElementByNameTag()
+       /* let elementos = document.getElementsByTagName('p')
+        console.log(`Numero de párrafos: ${elementos.length}`)
+        for(let i = 0; i < elementos.length; i++){
+            console.log(`i: ${i} - ${elementos[i].innerHTML}`);
+        }*/
+    //recuperar los elementos por clase 
+   /* let elementos = document.getElementsByClassName('azul');
+    console.log(`Numero de elementos: ${elementos.length}`);
+    for (const item of elementos) {
+        console.log(`${item.innerHTML}`)
+    }*/
+    
+    //si queremos identificar con la tag de html junto con mla clase usamos querySelectoAll()
+    let elementos = document.querySelectorAll('h1.azul');
+    console.log(`Numeros de elementos: ${elementos.length}`)
+    for (const item of elementos) {
+        console.log(item.innerHTML);
+    }
+
+
+    </script>    
+</body>
+</html>
